@@ -1,0 +1,11 @@
+.service-image {
+  width: 100%;
+  padding: 10px 0;
+}
+.service-container {
+  border: 1px solid gray;
+  text-align: center;
+}
+.text {
+  margin-bottom: 10px;
+}

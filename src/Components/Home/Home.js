@@ -16,9 +16,9 @@ const Home = () => {
         <div className="service-heading d-flex justify-content-center my-4">
           <h1>Services</h1>
         </div>
-        <div className="services">
+        <div className="services row w-90 ">
           {datas.map((data) => (
-            <Services key={data.id}></Services>
+            <Services key={data.id} data={data}></Services>
           ))}
         </div>
       </div>

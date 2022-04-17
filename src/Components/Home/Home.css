@@ -3,3 +3,7 @@
   background-size: cover;
   height: 500px;
 }
+.services {
+  margin: 0 2%;
+  gap: 10px;
+}
