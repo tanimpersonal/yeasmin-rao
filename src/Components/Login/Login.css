@@ -1,6 +1,13 @@
 .login-container {
   margin-top: 10%;
 }
+.pass-reset {
+  font-weight: 800;
+}
 .pass-reset:hover {
   cursor: pointer;
+}
+.signup {
+  cursor: pointer;
+  font-weight: 800;
 }

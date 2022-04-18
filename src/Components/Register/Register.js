@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -24,6 +25,10 @@ const Register = () => {
       draggable: true,
       progress: undefined,
     });
+  };
+  const navigate = useNavigate();
+  const handleToLogin = () => {
+    navigate("/login");
   };
   console.log(user);
   return (
@@ -57,14 +62,12 @@ const Register = () => {
             required
           />
         </div>
-        <div className="mb-3 form-check">
-          <input
-            type="checkbox"
-            className="form-check-input"
-            id="exampleCheck1"
-          />
+        <div className="mb-3">
           <label className="form-check-label" htmlFor="exampleCheck1">
-            Check me out
+            Already a user?{" "}
+            <span className="signin" onClick={handleToLogin}>
+              Login
+            </span>
           </label>
         </div>
         <button type="submit" className="btn btn-primary">

@@ -53,7 +53,9 @@ const Login = () => {
   if (loggedLoading || googleLoading) {
     const loading = <p>Loading....</p>;
   }
-
+  const handleToRegister = () => {
+    navigate("/register");
+  };
   return (
     <div className="login-container container container-fluid">
       {loading}
@@ -86,7 +88,13 @@ const Login = () => {
             required
           />
         </div>
-        <div className="mb-3 form-check">
+        <div className="mb-3">
+          <span>
+            New User?{" "}
+            <span onClick={handleToRegister} className="signup">
+              Register
+            </span>
+          </span>
           <span onClick={handlePasswordReset} className="mx-5 pass-reset">
             Forgot password?
           </span>
