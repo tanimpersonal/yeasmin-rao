@@ -33,9 +33,21 @@ const Login = () => {
   };
   const [sendPasswordResetEmail, sending, passwordResetError] =
     useSendPasswordResetEmail(auth);
+  console.log(passwordResetError);
   const handlePasswordReset = () => {
     sendPasswordResetEmail(email.current.value);
-    if (!passwordResetError) {
+    console.log(email.current.value);
+    if (email.current.value === "") {
+      toast("No Reset Password Sent!", {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    } else {
       toast("Reset Password Sent!", {
         position: "bottom-center",
         autoClose: 5000,
