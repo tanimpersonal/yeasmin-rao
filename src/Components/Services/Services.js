@@ -1,7 +1,6 @@
 import React from "react";
 import "./Services.css";
 const Services = ({ data }) => {
-  console.log(data);
   return (
     <div className="col service-container shadow rounded">
       <div className="service-image-container">

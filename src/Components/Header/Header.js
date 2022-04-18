@@ -4,7 +4,15 @@ import "./Header.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CustomLink from "../CustomLink/CustomLink";
 import { Link } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import auth from "../Utility/firebase.init";
+import { useAuthState } from "react-firebase-hooks/auth";
 const Header = () => {
+  const [user, loading, error] = useAuthState(auth);
+  const handleLogOut = () => {
+    signOut(auth);
+    console.log(user);
+  };
   return (
     <div className="header">
       <Navbar bg="none" expand="lg">
@@ -41,6 +49,7 @@ const Header = () => {
                   Login
                 </Nav.Link>
               </Nav>
+              <Navbar.Text onClick={handleLogOut}>LogOut</Navbar.Text>
             </Navbar.Collapse>
             <div className="myname"></div>
           </div>
