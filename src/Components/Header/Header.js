@@ -35,7 +35,13 @@ const Header = () => {
                 >
                   Services
                 </Nav.Link>
-
+                <Nav.Link
+                  className="text-decoration-none"
+                  as={CustomLink}
+                  to="/blogs"
+                >
+                  Blogs
+                </Nav.Link>
                 {user ? (
                   ""
                 ) : (

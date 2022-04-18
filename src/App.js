@@ -8,6 +8,7 @@ import Header from "./Components/Header/Header";
 import Login from "./Components/Login/Login";
 import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute";
 import Checkout from "./Components/Checkout/Checkout";
+import Blogs from "./Components/Blogs/Blogs";
 function App() {
   return (
     <div className="app">
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
 
         <Route
           path="/checkout"
