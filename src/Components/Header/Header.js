@@ -13,6 +13,7 @@ const Header = () => {
     signOut(auth);
     console.log(user);
   };
+  console.log(user);
   return (
     <div className="header">
       <Navbar bg="none" expand="lg">
@@ -34,22 +35,31 @@ const Header = () => {
                 >
                   Services
                 </Nav.Link>
-                <Nav.Link
-                  className="text-decoration-none"
-                  as={CustomLink}
-                  to="/register"
-                >
-                  Register
-                </Nav.Link>
-                <Nav.Link
-                  className="text-decoration-none"
-                  as={CustomLink}
-                  to="/login"
-                >
-                  Login
-                </Nav.Link>
+
+                {user ? (
+                  ""
+                ) : (
+                  <Nav.Link
+                    className="text-decoration-none"
+                    as={CustomLink}
+                    to="/register"
+                  >
+                    Register
+                  </Nav.Link>
+                )}
+
+                {user ? (
+                  <Navbar.Text onClick={handleLogOut}>LogOut</Navbar.Text>
+                ) : (
+                  <Nav.Link
+                    className="text-decoration-none"
+                    as={CustomLink}
+                    to="/login"
+                  >
+                    Login
+                  </Nav.Link>
+                )}
               </Nav>
-              <Navbar.Text onClick={handleLogOut}>LogOut</Navbar.Text>
             </Navbar.Collapse>
             <div className="myname"></div>
           </div>
