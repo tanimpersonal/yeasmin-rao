@@ -6,7 +6,7 @@ import {
 } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../Utility/firebase.init";
-
+import "./Login.css";
 const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -20,8 +20,8 @@ const Login = () => {
   const handleLoginUser = (event) => {
     event.preventDefault();
     signInWithEmailAndPassword(email.current.value, password.current.value);
+    console.log(error);
   };
-
   const [signInWithGoogle, googleUser, googleLoading, googleError] =
     useSignInWithGoogle(auth);
   const handleGoogleSignIn = () => {
@@ -34,8 +34,9 @@ const Login = () => {
   if (loggedLoading || googleLoading) {
     const loading = <p>Loading....</p>;
   }
+
   return (
-    <div>
+    <div className="login-container">
       {loading}
       <form onSubmit={handleLoginUser}>
         <div className="mb-3">
@@ -76,6 +77,7 @@ const Login = () => {
             Check me out
           </label>
         </div>
+        {error ? <div className="error text-danger">{error.message}</div> : ""}
         <button type="submit" className="btn btn-primary">
           Submit
         </button>

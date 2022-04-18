@@ -18,7 +18,9 @@ const Header = () => {
     <Navbar bg="light" expand="lg" fixed="top">
       <Container>
         <div className="brand">
-          <Navbar.Brand href="#home">Goriber Photographer</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/">
+            Yeasmin Rao
+          </Navbar.Brand>
         </div>
         <div className="navbar">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

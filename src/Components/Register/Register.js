@@ -1,20 +1,33 @@
 import React, { useRef } from "react";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
-import auth from "../Utility/firebase.init";
 
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import auth from "../Utility/firebase.init";
+import "./Register.css";
 const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const email = useRef("");
   const password = useRef("");
-
+  const emailToast = () => {};
   const handleCreateUser = (event) => {
     event.preventDefault();
     createUserWithEmailAndPassword(email.current.value, password.current.value);
+    toast("Email Verification Sent!", {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
   console.log(user);
   return (
-    <div>
+    <div className="register">
       <form onSubmit={handleCreateUser}>
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">
@@ -57,6 +70,17 @@ const Register = () => {
         <button type="submit" className="btn btn-primary">
           Submit
         </button>
+        <ToastContainer
+          position="bottom-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </form>
     </div>
   );
