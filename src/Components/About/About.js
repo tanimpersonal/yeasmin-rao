@@ -13,7 +13,9 @@ const About = () => {
             and studied art, concentrating in photography in California State
             University, Northridge. Focusing more in Fine Art photography during
             academic years in college, but also passionate about applying it to
-            documentary photography.
+            documentary photography. Getting all the possible nominations is my
+            only goal now. Going from the ultra urban to the rural, everywhere
+            I'm keeping my footsteps to shine in the future!
           </p>
         </div>
       </div>

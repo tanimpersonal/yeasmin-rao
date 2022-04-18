@@ -57,7 +57,9 @@ const Header = () => {
               )}
 
               {user ? (
-                <Navbar.Text onClick={handleLogOut}>LogOut</Navbar.Text>
+                <Navbar.Text className="log-out" onClick={handleLogOut}>
+                  LogOut
+                </Navbar.Text>
               ) : (
                 <Nav.Link
                   className="text-decoration-none"

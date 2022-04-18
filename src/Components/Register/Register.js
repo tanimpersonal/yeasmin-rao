@@ -27,7 +27,7 @@ const Register = () => {
   };
   console.log(user);
   return (
-    <div className="register">
+    <div className="register container container-fluid">
       <form onSubmit={handleCreateUser}>
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">

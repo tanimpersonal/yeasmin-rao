@@ -2,7 +2,7 @@ import React from "react";
 
 const Blogs = () => {
   return (
-    <div className="my-5">
+    <div className="my-5 container container-fluid">
       <div className="first">
         <h1>1</h1>
         <p>
