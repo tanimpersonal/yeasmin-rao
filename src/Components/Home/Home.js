@@ -33,7 +33,7 @@ const Home = () => {
         <div className="contact-heading d-flex justify-content-center my-4">
           <h1>Contact Me</h1>
         </div>
-        <div className="my-5">
+        <div className="my-5 ">
           <Contact></Contact>
         </div>
       </div>

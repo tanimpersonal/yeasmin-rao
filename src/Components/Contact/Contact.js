@@ -44,7 +44,7 @@ const Contact = () => {
               required
               placeholder="Enter your subject"
               className="text-area"
-              cols={40}
+              cols={35}
             ></textarea>
           </Form.Group>
 
