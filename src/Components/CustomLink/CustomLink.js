@@ -7,13 +7,18 @@ function CustomLink({ children, to, ...props }) {
   return (
     <div>
       <Link
-        style={{ textDecoration: match ? "underline" : "none" }}
+        style={{
+          textDecoration: match ? "none" : "none",
+          color: match ? "black" : "gray",
+          borderBottom: match ? "10px solid black" : "1px solid gray",
+        }}
         to={to}
         {...props}
       >
         {children}
       </Link>
-      {match && " (active)"}
+      {/* <Link hover style={{ color: "blue" }}></Link> */}
+      {match && ""}
     </div>
   );
 }

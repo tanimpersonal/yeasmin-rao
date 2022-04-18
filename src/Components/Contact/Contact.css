@@ -1,0 +1,6 @@
+.text-area:focus {
+  outline: auto;
+  outline-offset: 10px;
+  outline-color: black;
+  border-radius: 20px;
+}

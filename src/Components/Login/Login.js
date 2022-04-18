@@ -1,10 +1,12 @@
 import React, { useRef } from "react";
 import {
   useAuthState,
+  useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 import auth from "../Utility/firebase.init";
 import "./Login.css";
 const Login = () => {
@@ -27,6 +29,22 @@ const Login = () => {
   const handleGoogleSignIn = () => {
     signInWithGoogle();
     console.log(googleUser);
+  };
+  const [sendPasswordResetEmail, sending, passwordResetError] =
+    useSendPasswordResetEmail(auth);
+  const handlePasswordReset = () => {
+    sendPasswordResetEmail(email.current.value);
+    if (!passwordResetError) {
+      toast("Reset Password Sent!", {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
   };
   if (loggedUser || googleUser) {
     navigate(from, { replace: true });
@@ -76,11 +94,20 @@ const Login = () => {
           <label className="form-check-label" htmlFor="exampleCheck1">
             Check me out
           </label>
+          <span onClick={handlePasswordReset} className="mx-5 pass-reset">
+            Forgot password?
+          </span>
         </div>
         {error ? <div className="error text-danger">{error.message}</div> : ""}
+        {passwordResetError ? (
+          <div className="error text-danger">{passwordResetError.message}</div>
+        ) : (
+          ""
+        )}
         <button type="submit" className="btn btn-primary">
           Submit
         </button>
+        <ToastContainer />
       </form>
       <div className="google-signin">
         <button onClick={() => handleGoogleSignIn()}>

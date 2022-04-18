@@ -15,7 +15,7 @@ const Header = () => {
   };
   console.log(user);
   return (
-    <Navbar bg="light" expand="lg" fixed="top">
+    <Navbar bg="light" expand="lg">
       <Container>
         <div className="brand">
           <Navbar.Brand as={Link} to="/">
@@ -29,13 +29,7 @@ const Header = () => {
               <Nav.Link as={CustomLink} to="/">
                 Home
               </Nav.Link>
-              <Nav.Link
-                className="text-decoration-none"
-                as={CustomLink}
-                to="/services"
-              >
-                Services
-              </Nav.Link>
+
               <Nav.Link
                 className="text-decoration-none"
                 as={CustomLink}
