@@ -6,14 +6,27 @@
 
 # Features:
 
-- Login, register using firebase
+- Authentication using firebase
 
 - No multiple user
 
-# Technologies Used:
+- Manage Service
+
+
+# Frontend:
 
 - Flaticon Icons
 - React-Bootstrap
 - Bootstrap
-- Firebase Hosting
 - React toastify
+- React Charts
+- HTML
+- CSS
+
+# Backend: 
+- Node
+- Express
+- Firebase
+
+# Database
+- Mongo
